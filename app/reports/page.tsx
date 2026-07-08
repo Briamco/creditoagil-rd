@@ -27,7 +27,7 @@ export default function ReportsPage() {
 
   return (
     <div className="space-y-8 animate-fade-in">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/40 pb-5">
         <div>
           <h2 className="text-3xl font-extrabold text-slate-800 font-[var(--font-heading)] tracking-tight">Reportes de Cartera y Caja</h2>
           <p className="text-sm text-slate-500 mt-1">Consulte los reportes generales de rentabilidad y saldos.</p>
@@ -36,8 +36,8 @@ export default function ReportsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Resumen de Cartera */}
-        <div className="bg-white border border-slate-100 p-5 rounded-xl shadow-sm space-y-4 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl pointer-events-none" />
+        <div className="glass-card-solid p-5 space-y-4 relative overflow-hidden">
+          <div className="glow-blob-blue top-0 right-0 w-24 h-24" />
           <h3 className="text-[10px] font-bold text-blue-600 uppercase tracking-wider flex items-center gap-1.5 relative z-10">
             Resumen de Cartera
           </h3>
@@ -62,8 +62,8 @@ export default function ReportsPage() {
         </div>
 
         {/* Resumen de Caja y Gastos */}
-        <div className="bg-white border border-slate-100 p-5 rounded-xl shadow-sm space-y-4 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl pointer-events-none" />
+        <div className="glass-card-solid p-5 space-y-4 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-3xl pointer-events-none" />
           <h3 className="text-[10px] font-bold text-rose-600 uppercase tracking-wider flex items-center gap-1.5 relative z-10">
             Gastos y Rendimientos
           </h3>
@@ -80,7 +80,7 @@ export default function ReportsPage() {
               <span className="text-slate-500">Intereses Cobrados (Est.):</span>
               <span className="font-bold text-emerald-600 font-mono">+{formatRD(totalInterestEarned)}</span>
             </div>
-            <div className="flex justify-between border-t border-slate-100 pt-2 font-semibold">
+            <div className="flex justify-between border-t border-slate-200/40 pt-2 font-semibold">
               <span className="text-slate-600">Retorno Neto (Interés - Gastos):</span>
               <span className="font-extrabold font-mono text-blue-600">
                 {formatRD(totalInterestEarned - totalExpenses)}
@@ -90,8 +90,8 @@ export default function ReportsPage() {
         </div>
 
         {/* Distribución por Banco */}
-        <div className="bg-white border border-slate-100 p-5 rounded-xl shadow-sm space-y-4 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-full blur-2xl pointer-events-none" />
+        <div className="glass-card-solid p-5 space-y-4 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-full blur-3xl pointer-events-none" />
           <h3 className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider flex items-center gap-1.5 relative z-10">
             Distribución Bancaria
           </h3>
@@ -119,20 +119,20 @@ export default function ReportsPage() {
       </div>
 
       {/* Historial Consolidado de Caja */}
-      <div className="bg-white border border-slate-100 p-6 rounded-xl shadow-sm relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="glass-card-solid p-6 relative overflow-hidden">
+        <div className="glow-blob-blue top-0 right-0 w-32 h-32" />
         <h3 className="text-sm font-bold text-slate-800 uppercase tracking-wider mb-6 relative z-10 font-[var(--font-heading)]">
           Historial Consolidado de Transacciones de Caja
         </h3>
         <div className="overflow-x-auto max-h-[400px] relative z-10">
           <table className="w-full text-left text-xs border-collapse">
             <thead className="bg-slate-50 sticky top-0 z-10">
-              <tr className="border-b border-slate-100 text-slate-400 font-bold uppercase tracking-wider">
-                <th className="py-3 px-4">Fecha</th>
-                <th className="py-3 px-4">Código</th>
-                <th className="py-3 px-4">Categoría</th>
-                <th className="py-3 px-4">Descripción</th>
-                <th className="py-3 px-4 text-right">Monto</th>
+              <tr>
+                <th className="table-header">Fecha</th>
+                <th className="table-header">Código</th>
+                <th className="table-header">Categoría</th>
+                <th className="table-header">Descripción</th>
+                <th className="table-header-right">Monto</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-50">

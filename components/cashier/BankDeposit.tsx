@@ -56,7 +56,7 @@ export default function BankDepositForm() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 animate-fade-in">
       {/* Formulario */}
-      <div className="lg:col-span-5 bg-white border border-slate-100 p-6 rounded-xl shadow-sm">
+      <div className="lg:col-span-5 glass-card-solid p-6">
         <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2 font-[var(--font-heading)]">
           Registrar Depósito Bancario
         </h3>
@@ -69,7 +69,7 @@ export default function BankDepositForm() {
             <select
               value={bank}
               onChange={(e) => setBank(e.target.value as BankName)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none cursor-pointer"
+              className="input-glass cursor-pointer"
             >
               <option value="banreservas">Banreservas</option>
               <option value="banco_popular">Banco Popular</option>
@@ -88,7 +88,7 @@ export default function BankDepositForm() {
                 min="1"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm font-mono text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none"
+                className="input-glass font-mono"
                 placeholder="0.00"
               />
             </div>
@@ -102,7 +102,7 @@ export default function BankDepositForm() {
                 required
                 value={referenceNumber}
                 onChange={(e) => setReferenceNumber(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm font-mono text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none"
+                className="input-glass font-mono"
                 placeholder="BR-123456"
               />
             </div>
@@ -118,7 +118,7 @@ export default function BankDepositForm() {
       </div>
 
       {/* Historial de Depósitos */}
-      <div className="lg:col-span-7 bg-white border border-slate-100 p-6 rounded-xl shadow-sm">
+      <div className="lg:col-span-7 glass-card-solid p-6">
         <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2 font-[var(--font-heading)]">
           Historial de Depósitos Recientes
         </h3>
@@ -126,12 +126,12 @@ export default function BankDepositForm() {
         <div className="overflow-x-auto max-h-[350px]">
           <table className="w-full text-left text-xs border-collapse">
             <thead className="bg-slate-50 sticky top-0 z-10">
-              <tr className="border-b border-slate-200/80 text-slate-500 font-bold uppercase tracking-wider">
-                <th className="py-2.5 px-3">Fecha</th>
-                <th className="py-2.5 px-3">Banco</th>
-                <th className="py-2.5 px-3">Referencia</th>
-                <th className="py-2.5 px-3">Depositado Por</th>
-                <th className="py-2.5 px-3 text-right">Monto</th>
+              <tr>
+                <th className="table-header">Fecha</th>
+                <th className="table-header">Banco</th>
+                <th className="table-header">Referencia</th>
+                <th className="table-header">Depositado Por</th>
+                <th className="table-header-right">Monto</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-50 bg-transparent">

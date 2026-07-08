@@ -70,8 +70,8 @@ export default function MetricCard({ title, value, change, icon, trend, accentCo
   return (
     <div
       className="
-        glass-card overflow-hidden group cursor-default border border-slate-100 bg-white relative
-        transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_24px_rgba(15,23,42,0.04)]
+        glass-card-solid group cursor-default relative
+        transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(37,99,235,0.08),0_6px_14px_-4px_rgba(15,23,42,0.04)]
       "
     >
       {/* Background Radial Glow */}

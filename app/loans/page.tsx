@@ -47,7 +47,7 @@ export default function LoansPage() {
 
   return (
     <div className="space-y-8 animate-fade-in">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/40 pb-5">
         <div>
           <h2 className="text-3xl font-extrabold text-slate-800 font-[var(--font-heading)] tracking-tight">Contratos de Préstamos</h2>
           <p className="text-sm text-slate-500 mt-1">Consulte los préstamos desembolsados y su amortización.</p>
@@ -57,32 +57,32 @@ export default function LoansPage() {
             <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
             <span>{loans.filter((l) => l.status === 'active').length} Contratos Activos</span>
           </div>
-          <a
-            href="/loans/simulator"
-            className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all hover:scale-[1.02] shadow-md shadow-blue-500/10"
-          >
-            <SimulatorIcon size={14} /> Simular Préstamo
-          </a>
+              <a
+                href="/loans/simulator"
+                className="btn-primary"
+              >
+                <SimulatorIcon size={14} /> Simular Préstamo
+              </a>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* Listado de Préstamos */}
         <div className={selectedLoan ? 'lg:col-span-7' : 'lg:col-span-12'}>
-          <div className="glass-card p-6 relative overflow-hidden border border-slate-100 bg-white">
+          <div className="glass-card-solid p-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
             <div className="overflow-x-auto relative z-10">
               <table className="w-full text-left text-sm border-collapse">
                 <thead>
-                  <tr className="border-b border-slate-100 text-slate-400 font-bold text-[10px] uppercase tracking-wider">
-                    <th className="py-3 px-4">Contrato ID</th>
-                    <th className="py-3 px-4">Cliente</th>
-                    <th className="py-3 px-4 text-right">Capital</th>
-                    <th className="py-3 px-4 text-center">Tasa</th>
-                    <th className="py-3 px-4 text-center">Plazo</th>
-                    <th className="py-3 px-4">Frecuencia</th>
-                    <th className="py-3 px-4">Tipo</th>
-                    <th className="py-3 px-4 text-center">Estado</th>
+                  <tr>
+                    <th className="table-header">Contrato ID</th>
+                    <th className="table-header">Cliente</th>
+                    <th className="table-header-right">Capital</th>
+                    <th className="table-header-center">Tasa</th>
+                    <th className="table-header-center">Plazo</th>
+                    <th className="table-header">Frecuencia</th>
+                    <th className="table-header">Tipo</th>
+                    <th className="table-header-center">Estado</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50">
@@ -151,7 +151,7 @@ export default function LoansPage() {
             {selectedLoan && (<>
 
             {selectedClient && (
-              <div className="p-4 bg-slate-50 rounded-lg border border-slate-100 text-xs space-y-2.5 relative z-10">
+              <div className="p-4 bg-slate-50/80 rounded-lg border border-slate-100/80 text-xs space-y-2.5 relative z-10">
                 <div className="flex justify-between">
                   <span className="text-slate-450 font-bold uppercase text-[9px] tracking-wider">Deudor Principal:</span>
                   <span className="font-bold text-slate-700">{selectedClient.firstName} {selectedClient.lastName}</span>
@@ -164,7 +164,7 @@ export default function LoansPage() {
                   <span className="text-slate-450 font-bold uppercase text-[9px] tracking-wider">Monto Original:</span>
                   <span className="font-extrabold text-blue-600 font-mono text-sm">{formatRD(selectedLoan.amount)}</span>
                 </div>
-                <div className="flex justify-between pt-2 border-t border-slate-100 items-center">
+                <div className="flex justify-between pt-2 border-t border-slate-200/40 items-center">
                   <span className="text-slate-450 font-bold uppercase text-[9px] tracking-wider">Pagaré Notarial:</span>
                   <a
                     href={`/print/pagare?loanId=${selectedLoan.id}`}

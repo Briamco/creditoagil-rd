@@ -54,11 +54,11 @@ export default function ClientTable({ onSelectClient, onOpenNewClientModal }: Cl
   });
 
   return (
-    <div className="glass-card p-6 relative overflow-hidden animate-fade-in w-full border border-slate-100 bg-white">
+    <div className="glass-card-solid p-6 relative overflow-hidden animate-fade-in w-full">
       <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Table Header Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5 mb-6 relative z-10">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/40 pb-5 mb-6 relative z-10">
         <div>
           <h2 className="text-3xl font-extrabold text-slate-800 font-[var(--font-heading)] tracking-tight">Cartera de Clientes</h2>
           <p className="text-sm text-slate-500 mt-1">Busque y filtre la base de datos de deudores.</p>
@@ -72,7 +72,7 @@ export default function ClientTable({ onSelectClient, onOpenNewClientModal }: Cl
           {onOpenNewClientModal && (
             <button
               onClick={onOpenNewClientModal}
-              className="flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold transition-all hover:scale-[1.02] shadow-md shadow-blue-500/10 cursor-pointer"
+              className="btn-primary"
             >
               <PlusIcon size={14} /> Nuevo Cliente
             </button>
@@ -91,7 +91,7 @@ export default function ClientTable({ onSelectClient, onOpenNewClientModal }: Cl
             placeholder="Buscar por nombre, cédula o ID..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full bg-slate-50 border border-slate-200/60 text-slate-800 placeholder-slate-400 rounded-lg py-2 pl-10 pr-4 text-sm transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
+            className="input-glass pl-10"
           />
         </div>
 
@@ -143,15 +143,15 @@ export default function ClientTable({ onSelectClient, onOpenNewClientModal }: Cl
       <div className="overflow-x-auto relative z-10">
         <table className="w-full text-left text-sm border-collapse">
           <thead>
-            <tr className="border-b border-slate-100 text-slate-400 font-bold text-[10px] uppercase tracking-wider">
-              <th className="py-3 px-4">ID</th>
-              <th className="py-3 px-4">Nombre Completo</th>
-              <th className="py-3 px-4">Cédula</th>
-              <th className="py-3 px-4">Teléfono</th>
-              <th className="py-3 px-4">Ciudad</th>
-              <th className="py-3 px-4">Riesgo</th>
-              <th className="py-3 px-4 text-center">Pst. Activos</th>
-              <th className="py-3 px-4 text-right">Saldo Pendiente</th>
+            <tr>
+              <th className="table-header">ID</th>
+              <th className="table-header">Nombre Completo</th>
+              <th className="table-header">Cédula</th>
+              <th className="table-header">Teléfono</th>
+              <th className="table-header">Ciudad</th>
+              <th className="table-header">Riesgo</th>
+              <th className="table-header-center">Pst. Activos</th>
+              <th className="table-header-right">Saldo Pendiente</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-50">

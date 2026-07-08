@@ -135,7 +135,7 @@ export default function CashierWindow() {
       {/* Columna Izquierda: Búsqueda y Caja */}
       <div className="lg:col-span-4 space-y-6">
         {/* Panel de Búsqueda */}
-        <div className="bg-white border border-slate-100 p-6 rounded-xl shadow-sm">
+        <div className="glass-card-solid p-6">
           <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2 font-[var(--font-heading)]">
             Buscar Cliente
           </h3>
@@ -146,7 +146,7 @@ export default function CashierWindow() {
               placeholder="Nombre o Cédula..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 outline-none transition-all"
+              className="input-glass"
             />
             {filteredClients.length > 0 && (
               <div className="absolute left-0 right-0 mt-2 bg-white border border-slate-200 rounded-lg shadow-xl max-h-48 overflow-y-auto z-20">
@@ -154,7 +154,7 @@ export default function CashierWindow() {
                   <button
                     key={c.id}
                     onClick={() => handleSelectClient(c.id)}
-                    className="w-full text-left px-4 py-2.5 text-xs font-semibold hover:bg-slate-50 text-slate-700 hover:text-blue-600 border-b border-slate-100 flex items-center justify-between cursor-pointer"
+                    className="w-full text-left px-4 py-2.5 text-xs font-semibold hover:bg-slate-50 text-slate-700 hover:text-blue-600 border-b border-slate-200/30 flex items-center justify-between cursor-pointer"
                   >
                     <span>
                       {c.firstName} {c.lastName}
@@ -167,7 +167,7 @@ export default function CashierWindow() {
           </div>
 
           {selectedClient && (
-            <div className="mt-4 p-3 bg-slate-50 border border-slate-100 rounded-lg space-y-2">
+            <div className="mt-4 p-3 bg-slate-50/80 rounded-lg border border-slate-100/80 space-y-2">
               <h4 className="text-[10px] font-bold text-blue-600 uppercase tracking-wider">Cliente Seleccionado</h4>
               <p className="text-sm font-bold text-slate-700">
                 {selectedClient.firstName} {selectedClient.lastName}
@@ -180,7 +180,7 @@ export default function CashierWindow() {
         </div>
 
         {/* Balance de Caja Operativa Diaria */}
-        <div className="bg-white border border-slate-100 p-6 rounded-xl shadow-sm">
+        <div className="glass-card-solid p-6">
           <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2 font-[var(--font-heading)]">
             Balance de Caja Diario
           </h3>
@@ -197,7 +197,7 @@ export default function CashierWindow() {
               <span className="text-slate-400 font-semibold">Depósitos Bancarios (-):</span>
               <span className="font-bold text-indigo-600 font-mono">{formatRD(bankDeposited)}</span>
             </div>
-            <div className="border-t border-slate-100 pt-3 flex justify-between items-center">
+            <div className="border-t border-slate-200/40 pt-3 flex justify-between items-center">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Efectivo en Caja:</span>
               <span className="text-base font-extrabold font-mono text-blue-600">{formatRD(currentCash)}</span>
             </div>
@@ -206,7 +206,7 @@ export default function CashierWindow() {
       </div>
 
       {/* Columna Derecha: Registrar Pago */}
-      <div className="lg:col-span-8 bg-white border border-slate-100 p-6 rounded-xl shadow-sm">
+      <div className="lg:col-span-8 glass-card-solid p-6">
         <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2 font-[var(--font-heading)]">
           Recepción de Pago
         </h3>
@@ -229,7 +229,7 @@ export default function CashierWindow() {
                 <select
                   value={selectedLoanId}
                   onChange={(e) => handleLoanChange(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 outline-none cursor-pointer"
+                  className="input-glass cursor-pointer"
                 >
                   {clientLoans.map((l) => (
                     <option key={l.id} value={l.id}>
@@ -246,7 +246,7 @@ export default function CashierWindow() {
                 <select
                   value={selectedInstallmentNumber}
                   onChange={(e) => handleInstallmentChange(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 outline-none cursor-pointer"
+                  className="input-glass cursor-pointer"
                 >
                   {pendingInstallments.map((inst) => (
                     <option key={inst.number} value={inst.number.toString()}>
@@ -263,7 +263,7 @@ export default function CashierWindow() {
                 <select
                   value={paymentType}
                   onChange={(e) => setPaymentType(e.target.value as PaymentType)}
-                  className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 outline-none cursor-pointer"
+                  className="input-glass cursor-pointer"
                 >
                   <option value="regular">Cuota Regular</option>
                   <option value="capital">Abono a Capital</option>
@@ -273,7 +273,7 @@ export default function CashierWindow() {
             </div>
 
             {selectedLoan && selectedInstallmentNumber && (
-              <div className="bg-slate-50 p-4 border border-slate-100 rounded-xl grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              <div className="bg-slate-50/80 p-4 rounded-lg border border-slate-100/80 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
                 <div>
                   <span className="text-[9px] font-bold text-slate-400 uppercase">Capital Cuota</span>
                   <p className="text-xs font-bold text-slate-700 font-mono mt-1">
@@ -312,22 +312,22 @@ export default function CashierWindow() {
                 step="50"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full md:w-1/2 bg-slate-50 border border-slate-200 rounded-lg p-3 text-lg font-bold font-mono text-blue-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 outline-none transition-all"
+                className="w-full md:w-1/2 input-glass text-lg font-bold font-mono text-blue-600"
                 placeholder="Monto a pagar"
               />
             </div>
 
-            <div className="flex justify-end gap-3 border-t border-slate-100 pt-6">
+            <div className="flex justify-end gap-3 border-t border-slate-200/40 pt-6">
               <button
                 type="button"
                 onClick={() => setSelectedClientId('')}
-                className="px-5 py-2 rounded-lg border border-slate-200 text-slate-650 hover:bg-slate-50 hover:text-slate-800 text-xs font-bold uppercase tracking-wider transition-all cursor-pointer"
+                className="btn-secondary"
               >
                 Limpiar
               </button>
               <button
                 type="submit"
-                className="px-6 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-md shadow-blue-500/10 cursor-pointer"
+                className="btn-primary"
               >
                 Registrar Pago de Cuota
               </button>

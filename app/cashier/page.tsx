@@ -10,14 +10,14 @@ export default function CashierPage() {
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/40 pb-5">
         <div>
           <h2 className="text-3xl font-extrabold text-slate-800 font-[var(--font-heading)] tracking-tight">Ventanilla de Caja Operativa</h2>
           <p className="text-sm text-slate-500 mt-1">Gestión de recaudaciones, egresos y cuadres de caja del día.</p>
         </div>
 
         {/* Control de Pestañas */}
-        <div className="flex items-center gap-1 bg-slate-55 p-1 border border-slate-200/60 rounded-xl self-start md:self-auto">
+        <div className="flex items-center gap-1 bg-slate-50/80 p-1 rounded-xl border border-slate-200/60 self-start md:self-auto">
           <button
             onClick={() => setActiveTab('payments')}
             className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-200 cursor-pointer ${

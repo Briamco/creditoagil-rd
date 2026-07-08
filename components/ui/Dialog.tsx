@@ -21,13 +21,13 @@ const sizeClasses: Record<DialogSize, string> = {
 
 export function DialogHeader({ children, onClose }: { children: React.ReactNode; onClose: () => void }) {
   return (
-    <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
+    <div className="flex items-center justify-between border-b border-slate-200/40 pb-4 mb-6">
       <h2 className="text-base font-bold text-slate-800 font-[var(--font-heading)]">
         {children}
       </h2>
       <button
         onClick={onClose}
-        className="text-slate-450 hover:text-slate-700 transition-colors text-lg cursor-pointer"
+        className="w-6 h-6 rounded-full glass-card-static border border-slate-200/30 flex items-center justify-center text-slate-400 hover:text-slate-600 transition-colors text-xs cursor-pointer"
       >
         ✕
       </button>
@@ -41,7 +41,7 @@ export function DialogBody({ children, className = '' }: { children: React.React
 
 export function DialogFooter({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex items-center justify-end gap-3 border-t border-slate-100 pt-6 mt-8">
+    <div className="flex items-center justify-end gap-3 border-t border-slate-200/40 pt-6 mt-8">
       {children}
     </div>
   );
@@ -76,7 +76,7 @@ export default function Dialog({ open, onClose, size = 'md', children }: DialogP
       aria-modal="true"
     >
       <div
-        className={`bg-white border border-slate-150 rounded-xl w-full ${sizeClasses[size]} p-6 shadow-2xl animate-fade-in-scale max-h-[90vh] overflow-y-auto`}
+        className={`glass-card-static w-full ${sizeClasses[size]} p-6 animate-fade-in-scale max-h-[90vh] overflow-y-auto`}
         onClick={(e) => e.stopPropagation()}
       >
         {children}

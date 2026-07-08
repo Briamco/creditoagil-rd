@@ -73,7 +73,8 @@ export default function DashboardPage() {
   if (currentRole === 'Collector') {
     return (
       <div className="space-y-6 animate-fade-in max-w-4xl mx-auto pt-8">
-        <div className="bg-white border border-slate-100 p-8 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.02)] text-center flex flex-col items-center">
+        <div className="glass-card p-8 text-center flex flex-col items-center relative overflow-hidden">
+          <div className="glow-blob-blue -right-4 -top-4 w-32 h-32" />
           <div className="w-16 h-16 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-4 shadow-sm shadow-blue-500/5">
             <BikeIcon size={32} />
           </div>
@@ -86,7 +87,7 @@ export default function DashboardPage() {
           <div className="mt-6 flex justify-center">
             <a
               href="/collector"
-              className="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm tracking-wide shadow-md shadow-blue-500/10 hover:scale-105 transition-all flex items-center gap-2"
+              className="btn-primary text-sm px-6 py-3"
             >
               <MapIcon size={16} /> Ver Mi Ruta de Cobro
             </a>
@@ -99,7 +100,7 @@ export default function DashboardPage() {
   return (
     <div className="space-y-8 stagger-children">
       {/* Saludo y Título */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200/40 pb-5">
         <div>
           <h2 className="text-3xl font-extrabold text-slate-800 font-[var(--font-heading)] tracking-tight">
             Panel de Control Financiero

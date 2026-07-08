@@ -40,7 +40,7 @@ export default function ExpenseRegistry() {
   };  return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 animate-fade-in">
       {/* Formulario */}
-      <div className="lg:col-span-5 bg-white border border-slate-100 p-6 rounded-xl shadow-sm">
+      <div className="lg:col-span-5 glass-card-solid p-6">
         <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2 font-[var(--font-heading)]">
           Registrar Gasto Administrativo
         </h3>
@@ -55,7 +55,7 @@ export default function ExpenseRegistry() {
               required
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none"
+              className="input-glass"
               placeholder="Ej. Combustible para ruta o papel de oficina"
             />
           </div>
@@ -83,7 +83,7 @@ export default function ExpenseRegistry() {
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none cursor-pointer"
+                className="input-glass cursor-pointer"
               >
                 <option value="Material de Oficina">Material de Oficina</option>
                 <option value="Transporte">Transporte / Combustible</option>
@@ -98,7 +98,7 @@ export default function ExpenseRegistry() {
 
           <button
             type="submit"
-            className="w-full py-2.5 rounded-lg bg-rose-650 hover:bg-rose-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.01] shadow-md shadow-rose-500/10 cursor-pointer"
+            className="w-full py-2.5 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.01] shadow-md shadow-rose-500/10 cursor-pointer"
           >
             Registrar Gasto
           </button>
@@ -106,7 +106,7 @@ export default function ExpenseRegistry() {
       </div>
 
       {/* Historial de Gastos */}
-      <div className="lg:col-span-7 bg-white border border-slate-100 p-6 rounded-xl shadow-sm">
+      <div className="lg:col-span-7 glass-card-solid p-6">
         <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2 font-[var(--font-heading)]">
           Historial de Gastos Recientes
         </h3>
@@ -114,12 +114,12 @@ export default function ExpenseRegistry() {
         <div className="overflow-x-auto max-h-[350px]">
           <table className="w-full text-left text-xs border-collapse">
             <thead className="bg-slate-50 sticky top-0 z-10">
-              <tr className="border-b border-slate-200/80 text-slate-500 font-bold uppercase tracking-wider">
-                <th className="py-2.5 px-3">Fecha</th>
-                <th className="py-2.5 px-3">Descripción</th>
-                <th className="py-2.5 px-3">Categoría</th>
-                <th className="py-2.5 px-3">Registrado Por</th>
-                <th className="py-2.5 px-3 text-right">Monto</th>
+              <tr>
+                <th className="table-header">Fecha</th>
+                <th className="table-header">Descripción</th>
+                <th className="table-header">Categoría</th>
+                <th className="table-header">Registrado Por</th>
+                <th className="table-header-right">Monto</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-50 bg-transparent">

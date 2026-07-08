@@ -42,7 +42,7 @@ export default function RoleSwitcher() {
     <div className="role-switcher fixed bottom-6 right-6 z-50">
       {/* Expanded Panel */}
       {isExpanded && (
-        <div className="glass-card-stronger p-4 mb-3 animate-fade-in-scale shadow-[0_10px_40px_rgba(15,23,42,0.08)] min-w-[220px]">
+        <div className="glass-card-solid p-4 mb-3 animate-fade-in-scale min-w-[220px]">
           <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-3">
             Cambiar Rol
           </p>
@@ -79,7 +79,7 @@ export default function RoleSwitcher() {
           transition-all duration-300 shadow-md
           ${isExpanded
             ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-blue-500/10'
-            : 'glass-card-stronger text-slate-700 hover:text-blue-600 hover:scale-[1.02]'
+            : 'glass-card-solid text-slate-700 hover:text-blue-600 hover:scale-[1.02]'
           }
         `}
       >

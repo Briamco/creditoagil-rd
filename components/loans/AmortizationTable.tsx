@@ -47,16 +47,16 @@ export default function AmortizationTable({
     <div className={`overflow-y-auto border border-slate-200/80 rounded-lg ${maxHeight}`}>
       <table className="w-full text-left text-xs border-collapse relative">
         <thead className="bg-slate-50 sticky top-0 z-10">
-          <tr className="border-b border-slate-200/80 text-slate-500 font-bold uppercase tracking-wider">
-            <th className="py-2.5 px-3 w-12 text-center">No.</th>
-            <th className="py-2.5 px-3">Fecha Vence</th>
-            <th className="py-2.5 px-3 text-right">Capital</th>
-            <th className="py-2.5 px-3 text-right">Interés</th>
-            <th className="py-2.5 px-3 text-right">Mora</th>
-            <th className="py-2.5 px-3 text-right">Cuota Total</th>
-            <th className="py-2.5 px-3 text-right">Saldo Restante</th>
-            <th className="py-2.5 px-3 text-center">Estado</th>
-            {clientName && clientPhone && <th className="py-2.5 px-3 text-center">Acciones</th>}
+          <tr>
+            <th className="table-header-center w-12">No.</th>
+            <th className="table-header">Fecha Vence</th>
+            <th className="table-header-right">Capital</th>
+            <th className="table-header-right">Interés</th>
+            <th className="table-header-right">Mora</th>
+            <th className="table-header-right">Cuota Total</th>
+            <th className="table-header-right">Saldo Restante</th>
+            <th className="table-header-center">Estado</th>
+            {clientName && clientPhone && <th className="table-header-center">Acciones</th>}
           </tr>
         </thead>
         <tbody className="divide-y divide-slate-100 bg-transparent">

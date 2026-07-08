@@ -38,7 +38,7 @@ export default function CollectorPage() {
   return (
     <div className="space-y-8 max-w-4xl mx-auto animate-fade-in">
       {/* Encabezado y Selección de Ruta */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/40 pb-5">
         <div>
           <h2 className="text-3xl font-extrabold text-slate-800 font-[var(--font-heading)] tracking-tight">Rutas de Cobro en Campo</h2>
           <p className="text-sm text-slate-500 mt-1">Gestión de cartera móvil asignada a cobradores.</p>
@@ -47,7 +47,7 @@ export default function CollectorPage() {
         <select
           value={activeRouteId}
           onChange={(e) => setActiveRouteId(e.target.value)}
-          className="bg-slate-50 border border-slate-200 hover:border-blue-500/30 rounded-lg p-2.5 text-xs font-bold uppercase tracking-wider text-blue-600 min-w-[200px] focus:ring-2 focus:ring-blue-500/10 focus:border-blue-550 transition-all cursor-pointer outline-none"
+          className="input-glass cursor-pointer min-w-[200px] text-blue-600 font-bold uppercase tracking-wider text-xs"
         >
           {collectorRoutes.map((r) => (
             <option key={r.id} value={r.id}>
@@ -60,8 +60,8 @@ export default function CollectorPage() {
       {activeRoute ? (
         <div className="space-y-6 relative z-10">
           {/* Tarjeta de Progreso de Cobro de la Ruta */}
-          <div className="bg-white border border-slate-100 p-6 rounded-xl shadow-sm grid grid-cols-1 md:grid-cols-3 gap-6 items-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="glass-card-solid p-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center relative overflow-hidden">
+            <div className="glow-blob-blue top-0 right-0 w-32 h-32" />
             <div className="space-y-1 relative z-10">
               <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Cobrador Asignado</span>
               <p className="text-sm font-bold text-slate-700">{activeRoute.collectorName}</p>
@@ -83,7 +83,7 @@ export default function CollectorPage() {
               </div>
             </div>
 
-            <div className="flex justify-between md:justify-around gap-4 text-center border-t md:border-t-0 md:border-l border-slate-100 pt-4 md:pt-0 relative z-10">
+            <div className="flex justify-between md:justify-around gap-4 text-center border-t md:border-t-0 md:border-l border-slate-200/40 pt-4 md:pt-0 relative z-10">
               <div>
                 <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Cobrado</span>
                 <p className="text-lg font-extrabold font-mono text-emerald-600 mt-1">

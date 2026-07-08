@@ -39,7 +39,7 @@ export default function RecentActivity() {
   };
 
   return (
-    <div className="glass-card p-6 relative overflow-hidden animate-fade-in border border-slate-100 bg-white">
+    <div className="glass-card-solid p-6 relative overflow-hidden animate-fade-in">
       <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <h3 className="text-sm font-bold text-slate-800 mb-6 flex items-center gap-2 font-[var(--font-heading)] relative z-10">
@@ -53,7 +53,7 @@ export default function RecentActivity() {
       <div className="overflow-x-auto relative z-10">
         <table className="w-full text-left text-sm border-collapse">
           <thead>
-            <tr className="border-b border-slate-100 text-slate-400 font-bold text-[10px] uppercase tracking-wider">
+            <tr className="border-b border-slate-200/40 text-slate-400 font-bold text-[10px] uppercase tracking-wider">
               <th className="py-3 px-4">Fecha</th>
               <th className="py-3 px-4">Tipo</th>
               <th className="py-3 px-4">Descripción</th>

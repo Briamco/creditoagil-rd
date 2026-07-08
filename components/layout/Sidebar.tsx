@@ -74,7 +74,7 @@ export default function Sidebar({ isOpen, onClose }: { isOpen?: boolean; onClose
       isOpen ? 'translate-x-0' : '-translate-x-[280px]'
     }`}>
       {/* Logo Section */}
-      <div className="px-6 py-6 border-b border-slate-100 flex items-center justify-between">
+      <div className="px-6 py-6 border-b border-slate-200/40 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group" onClick={onClose}>
           <div className="w-9 h-9 rounded-lg bg-gradient-to-tr from-blue-600 to-blue-500 flex items-center justify-center shadow-md shadow-blue-500/10 group-hover:scale-105 transition-transform duration-300">
             <SparklesIcon size={18} className="text-white" />
@@ -128,8 +128,8 @@ export default function Sidebar({ isOpen, onClose }: { isOpen?: boolean; onClose
       </nav>
 
       {/* User Info Card */}
-      <div className="px-4 py-4 border-t border-slate-100">
-        <div className="bg-slate-50 border border-slate-100 rounded-lg p-3">
+      <div className="px-4 py-4 border-t border-slate-200/40">
+        <div className="glass-card-solid rounded-lg p-3">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-xs font-black text-blue-600 shadow-sm shadow-blue-500/5">
               {currentUser.split(' ').map(n => n[0]).join('').slice(0, 2)}

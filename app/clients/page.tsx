@@ -57,7 +57,7 @@ export default function ClientsPage() {
             </div>
 
             {/* Detalles Informativos */}
-            <div className="space-y-3.5 text-xs border-t border-b border-slate-100 py-4 relative z-10">
+            <div className="space-y-3.5 text-xs border-t border-b border-slate-200/40 py-4 relative z-10">
               <div className="flex justify-between">
                 <span className="text-slate-400 font-bold uppercase text-[9px] tracking-wider">Cédula:</span>
                 <span className="font-mono text-slate-700 font-semibold">
@@ -93,7 +93,7 @@ export default function ClientsPage() {
                   Fiador Solidario
                 </span>
                 {selectedClient.coSigners.map((fia, i) => (
-                  <div key={i} className="p-3 rounded-lg bg-slate-50 border border-slate-100 text-xs">
+                  <div key={i} className="p-3 rounded-lg bg-slate-50/80 border border-slate-100/80 text-xs">
                     <p className="font-semibold text-slate-700">{fia.name}</p>
                     <p className="text-slate-400 font-mono mt-0.5 text-[10px]">{formatCedula(fia.cedula)}</p>
                     <p className="text-slate-500 mt-1 text-[10px]">Relación: <span className="text-slate-700 font-semibold">{fia.relationship}</span> | Tel: <span className="text-slate-700 font-mono font-semibold">{fia.phone}</span></p>
@@ -131,7 +131,7 @@ export default function ClientsPage() {
               ) : (
                 <div className="space-y-2">
                   {clientLoans.map((loan) => (
-                    <div key={loan.id} className="p-3 rounded-lg bg-slate-50 border border-slate-100 text-xs flex justify-between items-center">
+                    <div key={loan.id} className="p-3 rounded-lg bg-slate-50/80 border border-slate-100/80 text-xs flex justify-between items-center">
                       <div>
                         <span className="font-bold text-blue-600 font-mono">{loan.id}</span>
                         <p className="text-[10px] text-slate-400 mt-0.5">

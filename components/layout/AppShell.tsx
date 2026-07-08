@@ -26,7 +26,7 @@ export default function AppShell({ children }: AppShellProps) {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="w-8 h-8 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/60 flex flex-col items-center justify-center gap-1 cursor-pointer transition-colors"
+            className="w-8 h-8 rounded-lg glass-card-static border border-slate-200/30 flex flex-col items-center justify-center gap-1 cursor-pointer transition-colors"
             title="Abrir Menú"
           >
             <span className="w-4 h-0.5 bg-slate-600 rounded-full" />

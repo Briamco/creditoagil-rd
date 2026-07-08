@@ -23,10 +23,10 @@ export default function RouteCard({ client, routeId, onLogPayment }: RouteCardPr
   return (
     <div
       className={`
-        p-4 transition-all duration-200 hover:scale-[1.01] border rounded-xl
+        p-4 transition-all duration-200 hover:scale-[1.01] rounded-xl
         ${client.collected
-          ? 'opacity-60 border-slate-150 bg-slate-50'
-          : 'border-slate-100 bg-white hover:border-blue-500/30 shadow-sm'
+          ? 'opacity-60 glass-card-static'
+          : 'glass-card cursor-pointer'
         }
       `}
     >
@@ -63,7 +63,7 @@ export default function RouteCard({ client, routeId, onLogPayment }: RouteCardPr
         </div>
 
         {/* Fila Inferior: Botones de Acción */}
-        <div className="flex items-center gap-2 border-t border-slate-100 pt-3 mt-1">
+        <div className="flex items-center gap-2 border-t border-slate-200/40 pt-3 mt-1">
           {client.collected ? (
             <div className="w-full flex items-center justify-center gap-1.5 py-2 rounded-lg bg-emerald-50 border border-emerald-100 text-emerald-700 text-[10px] font-bold uppercase tracking-wider">
               Cobro Registrado
@@ -72,7 +72,7 @@ export default function RouteCard({ client, routeId, onLogPayment }: RouteCardPr
             <>
               <button
                 onClick={() => onLogPayment(client.clientId)}
-                className="flex-1 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-bold uppercase tracking-wider transition-all hover:scale-[1.02] shadow-md shadow-blue-500/10 cursor-pointer"
+                className="flex-1 py-2 btn-primary justify-center text-[10px]"
               >
                 Cobrar
               </button>

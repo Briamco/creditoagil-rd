@@ -98,7 +98,7 @@ export default function LoanSimulator() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 animate-fade-in">
       {/* Panel Izquierdo: Parámetros */}
-      <div className="lg:col-span-5 bg-white border border-slate-100 rounded-xl p-6 shadow-sm">
+      <div className="lg:col-span-5 glass-card-solid p-6">
         <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2 font-[var(--font-heading)]">
           <SettingsIcon size={16} className="text-slate-500" /> Parámetros del Préstamo
         </h3>
@@ -112,7 +112,7 @@ export default function LoanSimulator() {
               required
               value={selectedClientId}
               onChange={(e) => setSelectedClientId(e.target.value)}
-              className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none"
+              className="input-glass"
             >
               <option value="">-- Seleccionar Cliente --</option>
               {clients.map((c) => (
@@ -135,7 +135,7 @@ export default function LoanSimulator() {
                 step="500"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm font-mono text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none"
+                className="input-glass font-mono"
                 placeholder="Monto a prestar"
               />
             </div>
@@ -151,7 +151,7 @@ export default function LoanSimulator() {
                 step="0.1"
                 value={interestRate}
                 onChange={(e) => setInterestRate(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm font-mono text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none"
+                className="input-glass font-mono"
                 placeholder="Ej. 3.5"
               />
             </div>
@@ -168,7 +168,7 @@ export default function LoanSimulator() {
                 min="1"
                 value={term}
                 onChange={(e) => setTerm(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm font-mono text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none"
+                className="input-glass font-mono"
                 placeholder="Cantidad de cuotas"
               />
             </div>
@@ -180,7 +180,7 @@ export default function LoanSimulator() {
               <select
                 value={frequency}
                 onChange={(e) => setFrequency(e.target.value as PaymentFrequency)}
-                className="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm text-slate-800 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 transition-all outline-none"
+                className="input-glass"
               >
                 <option value="daily">Diario</option>
                 <option value="weekly">Semanal</option>
@@ -222,18 +222,18 @@ export default function LoanSimulator() {
 
           <button
             type="submit"
-            className="w-full py-2.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-100 font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.01] cursor-pointer flex items-center justify-center gap-2"
+            className="w-full py-2.5 btn-secondary justify-center"
           >
             <ReportsIcon size={14} /> Calcular Tabla
           </button>
         </form>
 
         {calculatedInstallments.length > 0 && selectedClient && (
-          <div className="mt-6 border-t border-slate-100 pt-4 space-y-3">
+          <div className="mt-6 border-t border-slate-200/40 pt-4 space-y-3">
             <h4 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
               Resumen de Desembolso
             </h4>
-            <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 text-xs space-y-2">
+            <div className="p-3 bg-slate-50/80 rounded-lg border border-slate-100/80 text-xs space-y-2">
               <div className="flex justify-between">
                 <span className="text-slate-400 font-semibold">Cliente:</span>
                 <span className="font-bold text-slate-700">
@@ -252,7 +252,7 @@ export default function LoanSimulator() {
                   {formatRD(summary.totalPayments)}
                 </span>
               </div>
-              <div className="flex justify-between pt-1.5 border-t border-slate-100">
+              <div className="flex justify-between pt-1.5 border-t border-slate-200/40">
                 <span className="text-slate-500 font-bold uppercase text-[9px] tracking-wider">Valor Cuota:</span>
                 <span className="font-extrabold text-blue-600 font-mono text-sm">
                   {formatRD(calculatedInstallments[0]?.totalPayment || 0)}
@@ -262,7 +262,7 @@ export default function LoanSimulator() {
 
             <button
               onClick={handleCreateLoan}
-              className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-200 hover:scale-[1.02] shadow-md shadow-blue-500/10 cursor-pointer flex items-center justify-center gap-2"
+              className="w-full py-3 btn-primary justify-center"
             >
               <LoansIcon size={14} /> Desembolsar Préstamo (RD$)
             </button>
@@ -271,7 +271,7 @@ export default function LoanSimulator() {
       </div>
 
       {/* Panel Derecho: Tabla de Amortización */}
-      <div className="lg:col-span-7 bg-white border border-slate-100 rounded-xl p-6 shadow-sm flex flex-col">
+      <div className="lg:col-span-7 glass-card-solid p-6 flex flex-col">
         <h3 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2 font-[var(--font-heading)]">
           <ReportsIcon size={16} className="text-slate-500" /> Tabla de Amortización Preliminar
         </h3>
